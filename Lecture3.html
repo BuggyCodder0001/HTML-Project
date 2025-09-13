@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 3</title>
+</head>
+<body>
+    <header>
+        <h1>CodeyArmy</h1>
+        <h2>Defence Web Development Notes</h2>
+        <nav>
+            <a href="./Home.html">Home</a>&nbsp;&nbsp;
+            <a href="./Lecture1.html">Lecture 1</a>&nbsp;&nbsp;
+            <a href="./Lecture2.html">Lecture 2</a>&nbsp;&nbsp;
+            <a href="./Lecture3.html">Lecture 3</a>&nbsp;&nbsp;
+            <a href="./Lecture4.html">Lecture 4</a>&nbsp;&nbsp;
+            <a href="./Lecture5.html">Lecture 5</a>&nbsp;&nbsp;
+            <a href="about.html">About</a>&nbsp;&nbsp;
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <hr>
+    <br>
+
+    <section>
+        <img src="./images/defence3.avif" alt="Lecture3 Image" height="300" width="600">
+    </section>
+
+    <main>
+        <h1>HTML Boilerplate | Div | Class | Id</h1>
+        <br>
+        <section>
+            <ol>
+                <li> <h2>HTML Boilerplate</h2>
+                    <h3>The Anatomy of the HTML Boilerplate</h3>
+                    <pre><code>
+                        &lt;!DOCTYPE html&gt;
+                        &lt;html lang="en"&gt;
+                        &lt;head&gt;
+                            &lt;meta charset="UTF-8"&gt;
+                            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+                            &lt;title&gt;Document&lt;/title&gt;
+                        &lt;/head&gt;
+                        &lt;body&gt;
+
+                        &lt;/body&gt;
+                        &lt;/html&gt;
+                    </code></pre>
+                    <p>Let's break down each line and explain why it's necessary.</p>
+                    <ol>
+                        <li>
+                            &lt;!DOCTYPE html&gt;
+                            <ul>
+                                <li><strong>The Problem:</strong> In the past, there were many versions of HTML (HTML4, XHTML, etc.). The browser needed to know which set of rules to use to render the page.</li><br>
+                                <li><strong>The Solution:</strong> This is the very first line and it's called the <strong>Document Type Declaration</strong>. In modern HTML5, it's incredibly simple. This specific line tells the browser: "Use the latest, standard-compliant mode for rendering this HTML document." It's a switch that prevents the browser from falling back into "quirks mode" (an old mode for rendering non-standard pages). <strong>It must always be the first thing in your file</strong>.</li>
+                                
+                            </ul>
+                        </li>
+                        <br>
+                        <li>
+                            &lt;html lang="en"&gt;...&lt;/html&gt;
+                            <ul>
+                                <li><strong>The Problem:</strong>The web is global. How do search engines (like Google) and screen readers (for accessibility) know what human language the content is written in?</li><br>
+                                <li><strong>The Solution:</strong> This is the root element that wraps your entire page. The lang="en" attribute declares that the primary language of the page content is English. This is very important for accessibility and SEO. You'd change "en" to "es" for Spanish, "hi" for Hindi, etc.</li>
+                            </ul>
+                        </li>
+                        <br>
+                        <li>
+                            &lt;head&gt;...&lt;/head&gt;
+                            <ul>
+                                <li><strong>The Problem:</strong>As discussed, we need a place to put all the "behind-the-scenes" information that is for the browser, not for the user to see on the page.</li><br>
+                                <li><strong>The Solution:</strong> The&lt;head&gt; section is the container for this metadata. Nothing you put inside the&lt;head&gt; will be displayed in the main browser window..</li>
+                            </ul>
+                        </li>
+                        <br>
+                        <li>
+                            &lt;meta charset="UTF-8"&gt;
+                            <ul>
+                                <li><strong>The Problem:</strong> Computers fundamentally only understand numbers. To display text, they use a "character set" to map numbers to letters. There are many different character sets, and if the browser uses the wrong one, your text will be garbled.</li><br>
+                                <li><strong>The Solution:</strong> This meta tag explicitly tells the browser to use UTF-8, which is the universal standard character set for the web. It can represent almost any character and symbol from any language in the world. This line is essential to prevent text-encoding issues.</li>
+                            </ul>
+                        </li>
+                        <br>
+                        <li>
+                            &lt;meta name="viewport"...&gt;
+                            <ul>
+                                <li><strong>The Problem:</strong> A website can be viewed on a tiny phone screen or a giant desktop monitor. If you don't tell a mobile browser how to handle your page, it will try to render it as if it were on a desktop—resulting in a tiny, zoomed-out, unreadable page.</li><br>
+                                <li><strong>The Solution:</strong>  This specific meta tag is the cornerstone of responsive design.
+                                <ul>
+                                    <li>width=device-width: This tells the browser: "Make the page's width equal to the screen width of the device it's being viewed on."</li>
+                                    <li>initial-scale=1.0: This sets the initial zoom level to 100% when the page is first loaded.</li>
+                                    <li>In simple terms: this line tells the browser to render the page in a way that is optimized for mobile screens.</li>
+                                </ul></li>
+                            </ul>
+                        </li>
+                        <br>
+                        <li>
+                            &lt;title&gt;...&lt;/title&gt;
+                            <ul>
+                                <li><strong>The Problem:</strong>A user might have 20 tabs open. How do they identify your page? What name should appear when they bookmark your page?.</li><br>
+                                <li><strong>The Solution:</strong>The  &lt;title&gt; tag sets the text that appears in the browser tab, in bookmark lists, and in search engine results. It's a critical piece of metadata for both usability and SEO.</li>
+                            </ul>
+                        </li>
+                        <br>
+                        <li>
+                            &lt;body&gt;...&lt;/body&gt;
+                            <ul>
+                                <li><strong>The Problem:</strong>Where do we put the actual visible content?</li><br>
+                                <li><strong>The Solution:</strong> The &lt;body&gt; section is the container for everything the user will actually see on the page: your headings, paragraphs, images, links, tables, etc. All the tags you've learned so far go inside the &lt;body&gt;.</li>
+                            </ul>
+                        </li>
+                        <br>
+                    </ol>
+                </li>
+                <br>
+                <br>
+                <li>
+                    <h2>The  &lt;div&gt; (The Generic Box)</h2>
+                    <h3>First Principle (The Fundamental Truth)</h3>
+                    <p>We need a way to group different elements (&lt;h1&gt;, &lt;p&gt;, &lt;img&gt;, etc.) together into a single, conceptual unit.</p>
+                    <br>
+                    <h2>The Core Problem</h2>
+                    <p>Imagine you have a "user profile card" on a webpage. It consists of an image, a heading for the user's name, and a paragraph for their bio.</p>
+                    
+                    <h4>codeHtml</h4>
+                    <pre><code>
+    &lt;img src="avatar.png"&gt;
+    &lt;h2&gt;Arjun Kumar&lt;h2&gt;
+    &lt;p&gt;Loves to code and teach HTML.&lt;p&gt;
+                    </code></pre>
+                    <p>These are three separate elements. What if you want to put a border around all three of them as a single block? Or give them all a shared background color? Or move them all to the right side of the page as one unit? You have no way to target them as a group.</p>
+
+                    <br>
+                    <h2>The Logical Solution: The Generic Container</h2>
+                    <p>The most basic solution is to invent a generic, meaningless container. Its only job is to be a box that you can put other things into. It shouldn't have any inherent meaning or style; it's just a grouping mechanism.</p>
+                    <p>This is the  &lt;div&gt; (short for "division").</p>
+                    <p>By wrapping our elements in a  &lt;div&gt; , we create a single "box" that we can now control.</p>
+                    <h4>codeHtml</h4>
+                    <pre><code>
+    &lt;div&gt;
+        &lt;img src="avatar.png"&gt;
+        &lt;h2&gt;Arjun Kumar&lt;h2&gt;
+        &lt;p&gt;Loves to code and teach HTML.&lt;p&gt;
+    &lt;/div&gt;
+                    </code></pre>
+
+                </li>
+
+                <li>
+                    <h2>Class and ID in HTML</h2>
+                    <h3>1. Class</h3>
+                    <p>
+                        A <b>class</b> is used to apply the same style or behavior to multiple elements. 
+                        You can assign the same class name to many elements.
+                    </p>
+                    <pre><code>
+    &lt;p class="highlight"&gt;This is a highlighted paragraph.&lt;/p&gt;
+    &lt;h2 class="highlight"&gt;This heading is also highlighted.&lt;/h2&gt;
+                    </code></pre>
+                    <p><b>Key Point:</b> Many elements can share the same class.</p>
+                    <br>
+                    <h3>2. ID</h3>
+                    <p>
+                        An <b>ID</b> is used to uniquely identify an element. 
+                        Each ID must be unique within a page (cannot be used on multiple elements).
+                    </p>
+                    <pre><code>
+    &lt;p id="main-heading"&gt;This is a unique heading.&lt;/p&gt;
+                    </code></pre>
+                </li>
+            </ol>
+        </section>
+
+        <section>
+            <img src="d4.svg" alt="" width="1500">
+        </section>
+        
+
+    </main>
+
+     <footer>
+        <p>&copy; 2025 Defense Web Development Notes | Created by Vikash Mehta</p>
+    </footer>
+
+
+</body>
+</html>

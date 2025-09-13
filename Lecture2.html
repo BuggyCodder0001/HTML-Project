@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 2</title>
+</head>
+
+<body>
+    <header>
+        <h1>CodeyArmy</h1>
+        <h2>Defence Web Development Notes</h2>
+        <nav>
+            <a href="./Home.html">Home</a>&nbsp;&nbsp;
+            <a href="./Lecture1.html">Lecture 1</a>&nbsp;&nbsp;
+            <a href="./Lecture2.html">Lecture 2</a>&nbsp;&nbsp;
+            <a href="./Lecture3.html">Lecture 3</a>&nbsp;&nbsp;
+            <a href="./Lecture4.html">Lecture 4</a>&nbsp;&nbsp;
+            <a href="./Lecture5.html">Lecture 5</a>&nbsp;&nbsp;
+            <a href="about.html">About</a>&nbsp;&nbsp;
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <hr>
+    <br>
+    <section>
+        <img src="./images/defence2.avif" alt="" height="300" width="600">
+    </section>
+    <main>
+        <section>
+            <h1>Nested List and Table</h1>
+        </section>
+
+            
+            <ol>
+                
+                <li>
+                    <h3>List Elements (<code>&lt;ul&gt; , &lt;ol&gt; , &lt;li&gt;</code>)</h3>
+                    <p><strong>What it is:</strong> These tags are used to create lists. This is a perfect example of nesting.
+                    </p>
+                    <ul>
+                        <li><code>&lt;ul&gt;</code>: An Unordered List. It creates a bulleted list. </li>
+                        <li><code>&lt;ol&gt;</code>: An Ordered List. It creates a numbered list.</li>
+                        <li><code>&lt;li&gt;</code>: A List Item. Each item in either type of list must be wrapped in an 
+                            <code>&lt;li&gt;</code> tag.
+                        </li>
+                    </ul>
+                    <br>
+                    <p><strong>The Purpose:</strong> To group related items together in a list format.</p>
+
+                    <pre>
+                        <code>
+                            &lt;ul&gt;
+                                &lt;li&gt;Tea Bag&lt;li&gt;
+                                &lt;li&gt;Water&lt;li&gt;
+                                &lt;li&gt;Sugar&lt;li&gt;
+                                &lt;li&gt;Milk&lt;li&gt;
+                            &lt;ul&gt;
+                        </code>
+                        <br>
+                        <code>
+                            &lt;ol&gt;
+                                &lt;li&gt;First, boil the water in a kettle.&lt;li&gt;
+                                &lt;li&gt;Add tea bag, sugar and milk into it&lt;li&gt;
+                                &lt;li&gt;Keep boiling it for 5 minutes&lt;li&gt;
+                                &lt;li&gt;Serve the tea by pouring it into cup&lt;li&gt;
+                            &lt;ol&gt;
+                        </code>
+                    </pre>
+
+                    <h3>Nested List</h3>
+                    <p>A nested list means a list inside another list. 
+                        In HTML, you can nest an unordered list (<code>&lt;ul&gt;</code>) 
+                        or an ordered list (<code>&lt;ol&gt;</code>) inside a list item (<code>&lt;li&gt;</code>). <br>
+                        Nested lists are useful for creating hierarchical structures like categories, menus, or outlines..
+                    </p>
+                    
+                    <br>
+                    <h3>Example 1: Nested Unordered List</h3>
+                    <pre><code>
+                        &lt;ul&gt;
+                            &lt;li&gt;Frontend
+                                &lt;ul&gt;
+                                    &lt;li&gt;HTML&lt;/li&gt;
+                                    &lt;li&gt;CSS&lt;/li&gt;
+                                    &lt;li&gt;JavaScript&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;Backend
+                                &lt;ul&gt;
+                                    &lt;li&gt;Node.js&lt;/li&gt;
+                                    &lt;li&gt;Python&lt;/li&gt;
+                                &lt;/ul&gt;
+                            &lt;/li&gt;
+                        &lt;/ul&gt;
+        
+                    </code></pre>
+
+                    <br>
+
+                    <h3>Example 2: Nested Ordered List</h3>
+                    <pre><code>
+                            &lt;ol&gt;
+                                &lt;li&gt;Continents
+                                    &lt;ol&gt;
+                                        &lt;li&gt;Asia&lt;/li&gt;
+                                        &lt;li&gt;Europe&lt;/li&gt;
+                                        &lt;li&gt;Africa&lt;/li&gt;
+                                    &lt;/ol&gt;
+                                &lt;/li&gt;
+
+                                &lt;li&gt;Oceans
+                                    &lt;ol&gt;
+                                        &lt;li&gt;Pacific&lt;/li&gt;
+                                        &lt;li&gt;Atlantic&lt;/li&gt;
+                                    &lt;/ol&gt;
+                                &lt;/li&gt;
+                            &lt;/ol&gt;
+                    </code></pre>
+
+                </li>
+            
+                <br><br>
+
+                <section>
+                <li>
+                    <h2>Tables in HTML</h2>
+                    <p>
+                        Tables in HTML are used to display data in rows and columns. 
+                        They are created using the <code>&lt;table&gt;</code> element, 
+                        with rows defined by <code>&lt;tr&gt;</code>, 
+                        header cells by <code>&lt;th&gt;</code>, 
+                        and data cells by <code>&lt;td&gt;</code>.
+                    </p>
+                    <br>
+                    <h2>HTML Table Elements</h2>
+                    <ul>
+                        <li><b>&lt;table&gt;</b> → Defines a table.</li>
+                        <li><b>&lt;tr&gt;</b> → Defines a row in a table.</li>
+                        <li><b>&lt;th&gt;</b> → Defines a header cell (bold & centered by default).</li>
+                        <li><b>&lt;td&gt;</b> → Defines a standard data cell.</li>
+                        <li><b>&lt;caption&gt;</b> → Adds a title or description to the table.</li>
+                        <li><b>&lt;thead&gt;</b> → Groups the header content of the table.</li>
+                        <li><b>&lt;tbody&gt;</b> → Groups the main body content of the table.</li>
+                        <li><b>&lt;tfoot&gt;</b> → Groups the footer content (like totals or summary).</li>
+                        <li><b>rowspan</b> → Attribute that merges a cell vertically across rows.</li>
+                        <li><b>colspan</b> → Attribute that merges a cell horizontally across columns.</li>
+                        <li><b>border</b> → Attribute that adds a border around the table and cells (old method, usually done with CSS).</li>
+                    </ul>
+
+                    <br>
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th>Level1</th>
+                                <th>Level2</th>
+                                <th>Level3</th>
+                                <th>Level4</th>
+                                <th>Level5</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="6">System</td>
+                                <td rowspan="4">System Apps</td>
+                                <td rowspan="3">System Env</td>
+                                <td>App Test</td>
+                                <td rowspan="2">Foo</td>
+                            </tr>
+                            <tr>
+                                <td>App memory</td>
+                            </tr>
+                            <tr>
+                                <td>App test</td>
+                                <td rowspan="2">bar</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    System Env 2
+                                </td>
+                                <td>
+                                    App memory
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" colspan="2">System Memory</td>
+                                <td>Memory Func</td>
+                                <td>Foo</td>
+                            </tr>
+                            <tr>
+                                <td>Apes test</td>
+                                <td>Bar</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Rows: 7 col: 5 -->
+
+                    <table>
+                        <thead>
+                            <tr>
+                                
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr></tr>
+                        </tbody>
+                    </table>
+                </li>
+
+            </ol>
+
+        </section>
+
+    </main>
+
+
+
+    <br><br>
+
+    <footer>
+        <p>&copy; 2025 Defense Web Development Notes | Created by Vikash Mehta</p>
+    </footer>
+</body>
+
+</html>
