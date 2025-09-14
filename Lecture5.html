@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 5</title>
+</head>
+<body>
+    <header>
+        <h1>CodeyArmy</h1>
+        <h2>Defence Web Development Notes</h2>
+        <nav>
+            <a href="./Home.html">Home</a>&nbsp;&nbsp;
+            <a href="./Lecture1.html">Lecture 1</a>&nbsp;&nbsp;
+            <a href="./Lecture2.html">Lecture 2</a>&nbsp;&nbsp;
+            <a href="./Lecture3.html">Lecture 3</a>&nbsp;&nbsp;
+            <a href="./Lecture4.html">Lecture 4</a>&nbsp;&nbsp;
+            <a href="./Lecture5.html">Lecture 5</a>&nbsp;&nbsp;
+            <a href="about.html">About</a>&nbsp;&nbsp;
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <hr>
+    <br>
+    <section>
+        <img src="./images/d5.avif" alt="Lecture3 Image" height="300" width="600">
+    </section>
+    <main>
+        <h1>HTML MEDIA</h1>
+
+        <h2>HTML Media Elements</h2>
+
+        <h3>1. The &lt;audio&gt; Tag</h3>
+        <ul>
+        <li><code>controls</code> → Shows play, pause, volume controls.</li>
+        <li><code>autoplay</code> → Starts playing automatically when the page loads.</li>
+        <li><code>loop</code> → Plays repeatedly after finishing.</li>
+        <li><code>muted</code> → Starts audio with sound muted.</li>
+        <li><code>preload</code> → Informs browser how to load:
+            <ul>
+            <li><code>auto</code> → Load whole audio file.</li>
+            <li><code>metadata</code> → Load only info (length, size).</li>
+            <li><code>none</code> → Don’t load until user clicks play.</li>
+            </ul>
+        </li>
+        <li><code>src</code> → Path of audio file (can also use <code>&lt;source&gt;</code>).</li>
+        </ul>
+
+        <pre>
+        <code>
+        &lt;audio controls loop preload="metadata"&gt;
+        &lt;source src="song.mp3" type="audio/mpeg"&gt;
+        &lt;source src="song.ogg" type="audio/ogg"&gt;
+        Your browser does not support audio.
+        &lt;/audio&gt;
+        </code>
+        </pre>
+
+        <hr>
+
+        <h3>2. The &lt;video&gt; Tag</h3>
+        <ul>
+        <li><code>controls</code> → Shows video controls (play, pause, volume, fullscreen).</li>
+        <li><code>autoplay</code> → Starts playing automatically when the page loads.</li>
+        <li><code>loop</code> → Restarts automatically after finishing.</li>
+        <li><code>muted</code> → Starts video with no sound.</li>
+        <li><code>poster</code> → Thumbnail image before playing.</li>
+        <li><code>width</code> / <code>height</code> → Sets the video size.</li>
+        <li><code>preload</code> → Same as in audio.</li>
+        <li><code>src</code> → Path of video file (can also use <code>&lt;source&gt;</code>).</li>
+        </ul>
+
+        <pre>
+        <code>
+        &lt;video width="400" controls poster="thumbnail.jpg"&gt;
+        &lt;source src="movie.mp4" type="video/mp4"&gt;
+        &lt;source src="movie.ogg" type="video/ogg"&gt;
+        Your browser does not support video.
+        &lt;/video&gt;
+        </code>
+        </pre>
+
+        <hr>
+
+        <h3>3. The &lt;source&gt; Tag</h3>
+        <ul>
+        <li>Used inside <code>&lt;audio&gt;</code> or <code>&lt;video&gt;</code>.</li>
+        <li><code>src</code> → File path.</li>
+        <li><code>type</code> → Media type (e.g., <code>audio/mpeg</code>, <code>video/mp4</code>).</li>
+        </ul>
+
+        <pre>
+        <code>
+        &lt;audio controls&gt;
+        &lt;source src="song.mp3" type="audio/mpeg"&gt;
+        &lt;/audio&gt;
+        </code>
+        </pre>
+
+        <hr>
+
+        <h3>4. The &lt;track&gt; Tag</h3>
+        <ul>
+        <li>Used inside <code>&lt;video&gt;</code> for subtitles or captions.</li>
+        <li><code>kind</code> → Type of text track:
+            <ul>
+            <li><code>subtitles</code> → Translation.</li>
+            <li><code>captions</code> → Audio description.</li>
+            <li><code>descriptions</code>, <code>chapters</code>, <code>metadata</code>.</li>
+            </ul>
+        </li>
+        <li><code>src</code> → Path to subtitle file (.vtt).</li>
+        <li><code>srclang</code> → Language of track.</li>
+        <li><code>label</code> → Track label (shown to user).</li>
+        <li><code>default</code> → Sets default track.</li>
+        </ul>
+
+        <pre>
+        <code>
+        &lt;video width="400" controls&gt;
+        &lt;source src="movie.mp4" type="video/mp4"&gt;
+        &lt;track src="subtitles_en.vtt" kind="subtitles" srclang="en" label="English" default&gt;
+        &lt;/video&gt;
+        </code>
+        </pre>
+
+    </main>
+</body>
+</html>

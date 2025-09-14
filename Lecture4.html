@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 4</title>
+</head>
+<body>
+    <header>
+        <h1>CodeyArmy</h1>
+        <h2>Defence Web Development Notes</h2>
+        <nav>
+            <a href="./Home.html">Home</a>&nbsp;&nbsp;
+            <a href="./Lecture1.html">Lecture 1</a>&nbsp;&nbsp;
+            <a href="./Lecture2.html">Lecture 2</a>&nbsp;&nbsp;
+            <a href="./Lecture3.html">Lecture 3</a>&nbsp;&nbsp;
+            <a href="./Lecture4.html">Lecture 4</a>&nbsp;&nbsp;
+            <a href="./Lecture5.html">Lecture 5</a>&nbsp;&nbsp;
+            <a href="about.html">About</a>&nbsp;&nbsp;
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <hr>
+    <br>
+    <section>
+        <img src="./images/defe4.avif" alt="Lecture3 Image" height="300" width="600">
+    </section>
+
+    <main>
+        <h1>HTML FORMS</h1>
+         <p>
+            Forms in HTML are used to collect user input. 
+            A form can contain different input elements like text fields, radio buttons, checkboxes, etc.
+            The form data can then be sent to a server for processing.
+        </p>
+
+        <h2>Form Elements</h2>
+        <ol>
+            <li><b>&lt;form&gt;</b> : The container element that defines a form.</li>
+            <li><b>&lt;input&gt;</b> : Used for user input (text, password, email, checkbox, radio, etc.).</li>
+            <li><b>&lt;label&gt;</b> : Defines a label for form elements to improve accessibility.</li>
+            <li><b>&lt;textarea&gt;</b> : Multi-line text input field.</li>
+            <li><b>&lt;select&gt;</b> : Drop-down list.</li>
+            <li><b>&lt;option&gt;</b> : Defines an item inside a drop-down list.</li>
+            <li><b>&lt;button&gt;</b> : Clickable button (submit, reset, or custom).</li>
+            <li><b>&lt;fieldset&gt;</b> : Groups related form elements together.</li>
+            <li><b>&lt;legend&gt;</b> : Caption for a &lt;fieldset&gt;.</li>
+            <li><b>&lt;datalist&gt;</b> : Provides auto-complete options for an &lt;input&gt;.</li>
+            <li><b>&lt;output&gt;</b> : Displays the result of a calculation or user action.</li>
+        </ol>
+        <h2>Basic HTML Form</h2>
+        <pre><code>
+        &lt;form action="/submit" method="post"&gt;
+        &lt;label for="name"&gt;Name:&lt;/label&gt;
+        &lt;input type="text" id="name" name="name"&gt;
+        &lt;button type="submit"&gt;Submit&lt;/button&gt;
+        &lt;/form&gt;
+        </code></pre>
+        <hr>
+
+        <section>
+            <h2>The &lt;input&gt; Element: The Box for Your Stuff</h2>
+            <p>This is the most common form tag. It's a self-closing tag that creates an input field. Its behavior changes based on its type attribute.</p>
+            <p>The most basic type is text.</p>
+            <p><pre><code>
+            &lt;form&gt;
+                &lt;input type="text"&gt;
+            &lt;/form&gt;
+            </code></pre></p>
+
+            <h3>The Need for Meaning - The&lt;label&gt;</h3>
+            <p><strong>The Problem:</strong> We have a box, but the user has no idea what they are supposed to type into it. Is it for a name? An email? A search query? The box is meaningless without a description.</p>
+            <p><strong>The Solution:</strong> We need to add a descriptive piece of text. The correct HTML tag for this is the <label>. It's a tag specifically designed to be the title for a form field.</p>
+            <pre><code>
+        &lt;label&gt;First Name&lt;/label&gt;
+        &lt;input type="text"&gt;
+            </code></pre>
+            <p><strong>Result: </strong>This is better! Now the user sees "First Name:" next to the box and knows what to type. But the &lt;label&gt; and the &lt;input&gt; are still two completely separate, unrelated things. The browser doesn't know they belong together</p>
+
+            <h3>Label and Input Connection</h3>
+            <ul>
+                <li>
+                    Use <code>id</code> in the <code>&lt;input&gt;</code> to give it a unique name.
+                </li>
+                <li>
+                    Use <code>for</code> in the <code>&lt;label&gt;</code> with the same id.
+                </li>
+                <li>
+                    Clicking the label activates the input (Usability).
+                </li>
+                <li>
+                    Screen readers announce the correct label (Accessibility).
+                </li>
+            </ul>
+            <pre>
+            <code>
+            &lt;label for="firstName"&gt;First Name:&lt;/label&gt;
+            &lt;input type="text" id="firstName"&gt;
+            </code>
+            </pre>
+            <hr>
+
+            <h3>The Need for Submission - The &lt;form&gt; and submit</h3>
+            <ul>
+            <li>
+                <strong>Problem:</strong> We have fields, but no way to submit the information.
+            </li>
+            <li>
+                <strong>Solution:</strong>
+                <ol>
+                <li>Wrap all fields inside a <code>&lt;form&gt;</code> tag (acts as container for submission).</li>
+                <li>Add a submit button using <code>&lt;input type="submit"&gt;</code>.</li>
+                </ol>
+            </li>
+            </ul>
+
+            <pre>
+            <code>
+            &lt;form&gt;
+            &lt;label for="firstName"&gt;First Name:&lt;/label&gt;
+            &lt;input type="text" id="firstName"&gt;
+
+            &lt;input type="submit"&gt;
+            &lt;/form&gt;
+            </code>
+            </pre>
+            <hr>
+
+            <h3>The Need for Data Identification - The <code>name</code> Attribute</h3>
+            <ul>
+            <li>
+                <strong>Problem:</strong> When form is submitted, the server needs labels (keys) to identify data. 
+                <code>id</code> works only within the page, not for submission.
+            </li>
+            <li>
+                <strong>Solution:</strong> Use the <code>name</code> attribute as the "data label" or "key" for submitted values.
+            </li>
+            </ul>
+
+            <pre>
+            <code>
+            &lt;form&gt;
+            &lt;label for="firstName"&gt;First Name:&lt;/label&gt;
+            &lt;input type="text" id="firstName" name="firstName"&gt;
+
+            &lt;input type="submit" value="Go"&gt;
+            &lt;/form&gt;
+            </code>
+            </pre>
+            <hr>
+
+            <h3>The Need for "Select One" - Radio Buttons</h3>
+            <ul>
+                <li>
+                    <strong>Problem:</strong> We need to ask a question where the user can choose only <strong>one option</strong> (e.g., gender, T-shirt size). 
+                    A text box allows inconsistent answers.
+                </li>
+                <li>
+                    <strong>Solution:</strong> Use <code>&lt;input type="radio"&gt;</code>. Selecting one option automatically de-selects others.
+                </li>
+                <li>
+                    <strong>Rule:</strong> All radio buttons in one group must share the same <code>name</code> attribute. 
+                    The <code>name</code> works as the group identifier.
+                </li>
+            </ul>
+
+            <pre>
+            <code>
+            &lt;form&gt;
+            &lt;p&gt;Choose T-shirt size:&lt;/p&gt;
+
+            &lt;input type="radio" id="small" name="size" value="Small"&gt;
+            &lt;label for="small"&gt;Small&lt;/label&gt;&lt;br&gt;
+
+            &lt;input type="radio" id="medium" name="size" value="Medium"&gt;
+            &lt;label for="medium"&gt;Medium&lt;/label&gt;&lt;br&gt;
+
+            &lt;input type="radio" id="large" name="size" value="Large"&gt;
+            &lt;label for="large"&gt;Large&lt;/label&gt;&lt;br&gt;
+
+            &lt;input type="submit" value="Submit"&gt;
+            &lt;/form&gt;
+            </code>
+            </pre>
+            <hr>
+
+            <h3>Let's break down the new attributes:</h3>
+            <ul>
+                <li>
+                    <code>type="radio"</code> → Creates the circular radio button.
+                </li>
+                <li>
+                    <code>name="shirtSize"</code> → Groups radio buttons together. Same name = only one can be selected.
+                </li>
+                <li>
+                    <code>id="sizeS"</code> → Each radio needs a unique id so its label can link correctly.
+                </li>
+                <li>
+                    <code>value="small"</code> → Actual data sent to the server if this option is chosen.  
+                    Example: <code>shirtSize=small</code>.
+                </li>
+            </ul>
+
+            <h3>The Need for "Select Many" - Checkboxes</h3>
+            <ul>
+            <li>
+                <strong>Problem:</strong> Sometimes users should be able to choose <em>multiple options</em> (e.g., pizza toppings). 
+                Radio buttons only allow one.
+            </li>
+            <li>
+                <strong>Solution:</strong> Use <code>&lt;input type="checkbox"&gt;</code> which allows multiple selections.
+            </li>
+            <li>
+                <strong>Rule:</strong> Checkboxes from the same question should share the same <code>name</code> so the server knows 
+                all selected values belong to one category.
+            </li>
+            </ul>
+
+            <pre>
+            <code>
+            &lt;form&gt;
+            &lt;label&gt;Pizza Toppings:&lt;/label&gt;&lt;br&gt;
+
+            &lt;input type="checkbox" id="toppingPep" name="toppings" value="pepperoni"&gt;
+            &lt;label for="toppingPep"&gt;Pepperoni&lt;/label&gt;&lt;br&gt;
+
+            &lt;input type="checkbox" id="toppingMush" name="toppings" value="mushrooms"&gt;
+            &lt;label for="toppingMush"&gt;Mushrooms&lt;/label&gt;&lt;br&gt;
+
+            &lt;input type="checkbox" id="toppingOni" name="toppings" value="onions"&gt;
+            &lt;label for="toppingOni"&gt;Onions&lt;/label&gt;&lt;br&gt;
+
+            &lt;input type="submit" value="Order"&gt;
+            &lt;/form&gt;
+            </code>
+            </pre>
+
+            <hr>
+
+            <h3>The Need for Long-Form Text - &lt;textarea&gt;</h3>
+            <ul>
+            <li>
+                <strong>Problem:</strong> <code>&lt;input type="text"&gt;</code> is good for single-line input, 
+                but not for long text like comments or addresses (text becomes unreadable).
+            </li>
+            <li>
+                <strong>Solution:</strong> Use <code>&lt;textarea&gt;</code>, a multi-line text input element.
+            </li>
+            <li>
+                <strong>Note:</strong> Unlike <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code> is a container tag 
+                (needs opening and closing tag) and connects to a label using the same <code>for</code> and <code>id</code> pattern.
+            </li>
+            </ul>
+
+            <pre>
+            <code>
+            &lt;form&gt;
+            &lt;label for="comments"&gt;Any special instructions?&lt;/label&gt;&lt;br&gt;
+            &lt;textarea id="comments" name="comments" rows="4" cols="50"&gt;&lt;/textarea&gt;&lt;br&gt;&lt;br&gt;
+            &lt;input type="submit" value="Submit"&gt;
+            &lt;/form&gt;
+            </code>
+            </pre>
+
+            <hr>
+
+            <h3>The Need for Many Options - The &lt;select&gt; Dropdown</h3>
+            <ul>
+            <li>
+                <strong>Problem:</strong> Radio buttons work for a few options, but not for long lists (e.g., 200 countries). 
+                A long list of radios would make the page messy.
+            </li>
+            <li>
+                <strong>Solution:</strong> Use a <code>&lt;select&gt;</code> element (dropdown menu) with multiple 
+                <code>&lt;option&gt;</code> tags. It hides all options until the user clicks.
+            </li>
+            <li>
+                <strong>Note:</strong> <code>&lt;label&gt;</code> connects to <code>&lt;select&gt;</code> using 
+                <code>for</code> and <code>id</code>.
+            </li>
+            </ul>
+
+            <pre>
+            <code>
+            &lt;form&gt;
+            &lt;label for="country"&gt;Country:&lt;/label&gt;&lt;br&gt;
+            &lt;select id="country" name="country"&gt;
+                &lt;option value=""&gt;--Please choose an option--&lt;/option&gt;
+                &lt;option value="in"&gt;India&lt;/option&gt;
+                &lt;option value="us"&gt;USA&lt;/option&gt;
+                &lt;option value="uk"&gt;United Kingdom&lt;/option&gt;
+                &lt;option value="au"&gt;Australia&lt;/option&gt;
+            &lt;/select&gt;&lt;br&gt;&lt;br&gt;
+
+            &lt;input type="submit" value="Submit"&gt;
+            &lt;/form&gt;
+            </code>
+            </pre>
+
+            <hr>
+
+
+        </section>
+         <section>
+            <img src="./images/note1.svg" alt="" width="1500">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Defense Web Development Notes | Created by Vikash Mehta</p>
+    </footer>
+</body>
+</html>
